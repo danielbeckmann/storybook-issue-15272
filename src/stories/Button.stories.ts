@@ -18,21 +18,20 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
   size: 'large',
-  label: 'Button',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+Primary.argTypes = {
+  size: {
+    control: {
+      type: 'radio',
+      labels: {
+        '': 'None',   // 👈 this empty string is the problem
+        'small': 'Small',
+        'medium': 'Medium',
+        'large': 'Large',
+      },
+      options: ['', 'small', 'medium', 'large']
+    }
+  }
+}

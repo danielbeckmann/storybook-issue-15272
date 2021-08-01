@@ -22,9 +22,18 @@ const Template: Story<Header> = (args: Header) => ({
 });
 
 export const LoggedIn = Template.bind({});
+
 LoggedIn.args = {
-  user: {},
+  user: {
+    name: 'Demo User'
+  },
 };
 
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+
+LoggedIn.argTypes = {
+  user: {
+    control: {
+      type: 'object',
+    }
+  }
+}

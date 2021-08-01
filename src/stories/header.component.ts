@@ -21,7 +21,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1>{{ user?.name }}</h1>
       </div>
       <div>
         <storybook-button
@@ -50,7 +50,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export default class HeaderComponent {
   @Input()
-  user: unknown = null;
+  user: { name: string } | null = null;
 
   @Output()
   onLogin = new EventEmitter<Event>();
